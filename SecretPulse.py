@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-SecretPulse v5.1.2 — COMMUNITY EDITION (Free)
+SecretPulse v5.1.2
 ════════════════════════════════════════════
-Free for personal and educational use.
-Pro edition with live verification + exploit
-paths available at https://SecretPulse.sh
+High-Signal Secret & API Exposure Scanner
+Designed to maximize bounty impact and minimize noise.
 ════════════════════════════════════════════
 
 Original: SecretPulse v5.0 — High-Signal Secret & API Exposure Scanner
@@ -84,7 +83,7 @@ try:
 except ImportError:
     HAS_ASYNC = False
 
-__version__ = '5.1.2-community'
+__version__ = '5.1.2'
 __author__  = 'Vinod Kumar Bontha'
 __lines__   = '10,900+'
 
@@ -106,6 +105,8 @@ _PLANS = {
     "pro":      ["scan", "verify", "json", "html", "pdf", "sarif",
                  "wayback", "cve", "batch", "attack_chains"],
     "lifetime": ["scan", "verify", "json", "html", "pdf", "sarif",
+                 "wayback", "cve", "batch", "attack_chains"],
+    "free":     ["scan", "verify", "json", "html", "pdf", "sarif",
                  "wayback", "cve", "batch", "attack_chains"],
 }
 
@@ -198,13 +199,12 @@ def _key_check_feature(payload: dict, feature: str) -> bool:
 
 def _license_gate(args) -> Optional[dict]:
     """
-    Community Edition — no license required.
-    Returns a free-tier payload.
+    Standard License.
+    Returns a free-tier payload with all features unlocked.
     """
-    print(f"  License: {Colors.OKCYAN}COMMUNITY EDITION{Colors.ENDC} (free)")
-    print(f"  {Colors.DIM}Upgrade → SecretPulse.sh for live verification + exploit paths{Colors.ENDC}")
+    print(f"  License: {Colors.OKGREEN}Standard{Colors.ENDC}")
     print()
-    return {"p": "free", "x": 9999999999, "e": "community"}
+    return {"p": "free", "x": 9999999999, "e": "standard"}
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -10004,8 +10004,8 @@ def print_banner():
     print(sep)
     print(fr())
     ce = '\033[38;5;79m'  # community teal
-    print(fr(f"   {ce}◆{R} {cw}{B}{v}{R}                  {ce}◆{R} {ce}COMMUNITY EDITION{R}"))
-    print(fr(f"   {ce}◆{R} {cw}{a}{R}             {ce}◆{R} {cd}13 modules · verification{R}"))
+    print(fr(f"   {ce}◆{R} {cw}{B}{v}{R}                  {ce}◆{R} {ce}Standard Edition{R}"))
+    print(fr(f"   {ce}◆{R} {cw}{a}{R}             {ce}◆{R} {cd}Full Features Unlocked{R}"))
     print(fr())
     print(fr(f"   {c1}▸{R} {cw}Identify secrets. Verify validity. Stealth mode enabled.{R}"))
     print(fr(f"   {c1}▸{R} {cd}Active analysis engine with offensive reconnaissance.{R}"))
@@ -10104,14 +10104,13 @@ Examples:
     if args.smart:
         args.recon = True
         args.db = True
-        # Community: --smart does NOT auto-enable --verify
-        # (verify is a Pro feature, gated below)
+        # Standard: --smart does NOT auto-enable --verify
         # Don't enable any exposure modules globally —
         # SmartRouter will enable them per-target
 
     # ── --full flag: enable everything (noisy fallback) ──
     if args.full:
-        # Community: verify/attack-chains/cve/wayback/rate-abuse gated below
+        # Standard: verify/attack-chains/cve/wayback/rate-abuse gated below
         args.probe_env = True
         args.probe_graphql = True
         args.probe_swagger = True
@@ -10781,26 +10780,7 @@ Examples:
 
 def _print_upgrade_banner():
     """Show upgrade prompt after scan completes."""
-    B = Colors.BOLD
-    C = Colors.OKCYAN
-    Y = Colors.WARNING
-    D = Colors.DIM
-    R = Colors.ENDC
-    print(f"""
-{Y}╔══════════════════════════════════════════════════════════════╗{R}
-{Y}║{R}  {B}Upgrade to SecretPulse Pro{R} — unlock the full pipeline:          {Y}║{R}
-{Y}║{R}                                                              {Y}║{R}
-{Y}║{R}  {C}✓{R} --verify     50+ live API verifiers (prove keys work)    {Y}║{R}
-{Y}║{R}  {C}✓{R} --attack-chains   Exploit paths + bounty tier scoring   {Y}║{R}
-{Y}║{R}  {C}✓{R} --cve-lookup      CVE cross-ref for npm packages       {Y}║{R}
-{Y}║{R}  {C}✓{R} --wayback         Mine historical JS from Wayback       {Y}║{R}
-{Y}║{R}  {C}✓{R} --sarif           CI/CD integration (GitHub, GitLab)    {Y}║{R}
-{Y}║{R}  {C}✓{R} --report pdf      Submit-ready PDF reports              {Y}║{R}
-{Y}║{R}  {C}✓{R} -L targets.txt    Unlimited batch scanning              {Y}║{R}
-{Y}║{R}                                                              {Y}║{R}
-{Y}║{R}  {D}Plans from $19/mo · Lifetime $199 · https://SecretPulse.sh{R}    {Y}║{R}
-{Y}╚══════════════════════════════════════════════════════════════╝{R}
-""")
+    pass
 
 
 # Patch main to show upgrade banner after scan

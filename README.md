@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-5.1.2-blue)
 ![Python](https://img.shields.io/badge/python-3.8+-green)
-![License](https://img.shields.io/badge/license-Community-cyan)
+![License](https://img.shields.io/badge/license-Standard-cyan)
 ![Modules](https://img.shields.io/badge/modules-13-purple)
 
 **Find secrets. Score them 0-100. Free forever.**
@@ -18,7 +18,6 @@ $ python3 SecretPulse.py https://target.com --smart
 
 [CRITICAL] Stripe Secret Key
   Confidence: 94/100  Status: Pattern matched
-  → Upgrade to Pro for live verification + exploit paths
 ```
 
 ---
@@ -59,7 +58,7 @@ python3 SecretPulse.py https://target.com \
 
 ---
 
-## What's Included (Free)
+## Features
 
 - **90+ secret patterns** — API keys, tokens, credentials, cloud secrets
 - **13 scan modules** — CORS, DOM XSS, JWT, open redirect, cloud perms, dep confusion, SSRF, IDOR, subdomain takeover
@@ -115,28 +114,7 @@ python3 SecretPulse.py https://target.com --smart -w 2 -r 2 --ua-rotate
 
 ---
 
-## Pro Edition
 
-The Community Edition finds and scores secrets. **Pro proves they're real.**
-
-| Feature | Community (Free) | Pro |
-|---------|-----------------|-----|
-| Scan modules | ✓ All 13 | ✓ All 13 |
-| Confidence scoring | ✓ 0-100 | ✓ 0-100 |
-| Smart mode + recon | ✓ | ✓ |
-| WAF adaptation | ✓ | ✓ |
-| Targets per scan | 3 | Unlimited |
-| **Live API verification** | — | **50+ verifiers** |
-| **Exploit path suggestions** | — | **Per-finding** |
-| **Attack chain mapping** | — | **With bounty tiers** |
-| CVE lookup + Wayback | — | ✓ |
-| PDF + SARIF output | — | ✓ |
-| Batch scanning | — | ✓ |
-| CI/CD integration | — | ✓ |
-
-**→ [Get SecretPulse Pro](https://secretpulse.sh)**
-
----
 
 ## CLI Reference
 
