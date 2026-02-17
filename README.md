@@ -10,7 +10,7 @@
 SecretPulse is a high-signal secret scanner that goes beyond pattern matching — it classifies targets, selects relevant modules, adapts to WAF pressure, and scores every finding with 6-factor confidence scoring. Built for bug bounty hunters who want signal, not noise.
 
 ```
-$ python3 SecretPulse_Community.py https://target.com --smart
+$ python3 SecretPulse.py https://target.com --smart
 
 [RECON] CT: 47 subs | DNS: 23 alive | High risk: 6
 [SMART] api.target.com → cors, jwt, swagger
@@ -39,7 +39,7 @@ $ python3 SecretPulse_Community.py https://target.com --smart
 
 ```bash
 # No installation. No key. Just run it.
-python3 SecretPulse_Community.py https://target.com --smart
+python3 SecretPulse.py https://target.com --smart
 ```
 
 ### Requirements
@@ -49,7 +49,7 @@ python3 SecretPulse_Community.py https://target.com --smart
 ### Recommended Command
 
 ```bash
-python3 SecretPulse_Community.py https://target.com \
+python3 SecretPulse.py https://target.com \
   --smart \
   --db --diff \
   --depth 2 \
@@ -77,16 +77,16 @@ python3 SecretPulse_Community.py https://target.com \
 
 ```bash
 # Smart scan (recommended — selects modules per target)
-python3 SecretPulse_Community.py https://target.com --smart
+python3 SecretPulse.py https://target.com --smart
 
 # Individual modules
-python3 SecretPulse_Community.py https://target.com --cors-check --dom-xss --jwt-exploit
+python3 SecretPulse.py https://target.com --cors-check --dom-xss --jwt-exploit
 
 # Recon only (discover subdomains, don't scan)
-python3 SecretPulse_Community.py target.com --recon-only --db
+python3 SecretPulse.py target.com --recon-only --db
 
 # Stealth mode (WAF-heavy targets)
-python3 SecretPulse_Community.py https://target.com --smart -w 2 -r 2 --ua-rotate
+python3 SecretPulse.py https://target.com --smart -w 2 -r 2 --ua-rotate
 ```
 
 ---
