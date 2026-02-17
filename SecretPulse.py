@@ -10037,7 +10037,6 @@ Examples:
         """
     )
     parser.add_argument('urls', nargs='*', help='URLs to scan')
-    parser.add_argument('--version', action='version', version=f'%(prog)s {__version__}')
     parser.add_argument('--key', help='License key (ARC-XXXX-XXXX-...)')
     parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-o', '--output', help='JSON output file')
