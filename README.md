@@ -1,4 +1,4 @@
-# <img src="arcanis-icon.svg" width="32" height="32" alt=""> Arcanis — The Scanner That Proves It
+# <img src="secretpulse-icon.svg" width="32" height="32" alt=""> SecretPulse — The Scanner That Proves It
 
 ![Version](https://img.shields.io/badge/version-5.1.2-blue)
 ![Python](https://img.shields.io/badge/python-3.8+-green)
@@ -7,10 +7,10 @@
 
 **Find secrets. Score them 0-100. Free forever.**
 
-Arcanis is a high-signal secret scanner that goes beyond pattern matching — it classifies targets, selects relevant modules, adapts to WAF pressure, and scores every finding with 6-factor confidence scoring. Built for bug bounty hunters who want signal, not noise.
+SecretPulse is a high-signal secret scanner that goes beyond pattern matching — it classifies targets, selects relevant modules, adapts to WAF pressure, and scores every finding with 6-factor confidence scoring. Built for bug bounty hunters who want signal, not noise.
 
 ```
-$ python3 Arcanis_Community.py https://target.com --smart
+$ python3 SecretPulse_Community.py https://target.com --smart
 
 [RECON] CT: 47 subs | DNS: 23 alive | High risk: 6
 [SMART] api.target.com → cors, jwt, swagger
@@ -23,9 +23,9 @@ $ python3 Arcanis_Community.py https://target.com --smart
 
 ---
 
-## Why Arcanis?
+## Why SecretPulse?
 
-| Feature | Arcanis | TruffleHog | Gitleaks | GitGuardian |
+| Feature | SecretPulse | TruffleHog | Gitleaks | GitGuardian |
 |---------|---------|------------|----------|-------------|
 | Confidence scoring | 6-factor (0-100) | ✗ | ✗ | Binary |
 | Smart routing | Per-target modules | ✗ | ✗ | ✗ |
@@ -39,7 +39,7 @@ $ python3 Arcanis_Community.py https://target.com --smart
 
 ```bash
 # No installation. No key. Just run it.
-python3 Arcanis_Community.py https://target.com --smart
+python3 SecretPulse_Community.py https://target.com --smart
 ```
 
 ### Requirements
@@ -49,7 +49,7 @@ python3 Arcanis_Community.py https://target.com --smart
 ### Recommended Command
 
 ```bash
-python3 Arcanis_Community.py https://target.com \
+python3 SecretPulse_Community.py https://target.com \
   --smart \
   --db --diff \
   --depth 2 \
@@ -77,16 +77,16 @@ python3 Arcanis_Community.py https://target.com \
 
 ```bash
 # Smart scan (recommended — selects modules per target)
-python3 Arcanis_Community.py https://target.com --smart
+python3 SecretPulse_Community.py https://target.com --smart
 
 # Individual modules
-python3 Arcanis_Community.py https://target.com --cors-check --dom-xss --jwt-exploit
+python3 SecretPulse_Community.py https://target.com --cors-check --dom-xss --jwt-exploit
 
 # Recon only (discover subdomains, don't scan)
-python3 Arcanis_Community.py target.com --recon-only --db
+python3 SecretPulse_Community.py target.com --recon-only --db
 
 # Stealth mode (WAF-heavy targets)
-python3 Arcanis_Community.py https://target.com --smart -w 2 -r 2 --ua-rotate
+python3 SecretPulse_Community.py https://target.com --smart -w 2 -r 2 --ua-rotate
 ```
 
 ---
@@ -134,7 +134,7 @@ The Community Edition finds and scores secrets. **Pro proves they're real.**
 | Batch scanning | — | ✓ |
 | CI/CD integration | — | ✓ |
 
-**→ [Get Arcanis Pro](https://arcanis.sh)**
+**→ [Get SecretPulse Pro](https://secretpulse.sh)**
 
 ---
 
@@ -164,7 +164,7 @@ The Community Edition finds and scores secrets. **Pro proves they're real.**
 
 ## Author
 
-**Muhammad Muiz Zamri**
+**Vinod Kumar Bontha**
 
 Built as a single Python file. 10,800+ lines. No frameworks. No cloud. No telemetry.
 
@@ -174,4 +174,4 @@ For authorized security testing only.
 
 ## Star History
 
-If Arcanis helps you find something real, consider giving it a ⭐
+If SecretPulse helps you find something real, consider giving it a ⭐
